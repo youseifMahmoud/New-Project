@@ -1,0 +1,1302 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نجار الدار - أفضل أعمال النجارة في المملكة</title>
+    <!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪚</text></svg>"> -->
+    <link rel="icon" href="./image/logo.png">
+    <!-- Bootstrap RTL CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">🪚</div>
+            <div class="loading-text" data-ar="نجار الدار" data-en="Najjar AlDar">نجار الدار</div>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#home">
+                <div class="logo-container">
+                    <div class="logo-icon"><img src="{% static 'image/logo.png' %}" style="width: 70px; height: 70px;" alt=""></div>
+                    <div class="logo-text">
+                        <span class="brand-name" data-ar="نجار الدار" data-en="Najjar Al-Dar">نجار الدار</span>
+                        <span class="brand-tagline" data-ar="حرفية متقنة" data-en="Perfect Craftsmanship">حرفية متقنة</span>
+                    </div>
+                </div>
+            </a>
+            
+            <div class="d-flex align-items-center order-lg-3">
+                <button id="langToggle" class="btn btn-outline-primary me-2 lang-btn">
+                    <i class="fas fa-globe"></i>
+                    <span class="lang-text">EN</span>
+                </button>
+                <button id="adminBtn" class="btn btn-outline-secondary me-2 admin-btn" onclick="showAdminLogin()">
+                    <i class="fas fa-user-shield"></i>
+                    <span data-ar="إدارة" data-en="Admin">إدارة</span>
+                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" data-ar="من نحن" data-en="About">من نحن</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery" data-ar="المعرض" data-en="Gallery">المعرض</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials" data-ar="آراء العملاء" data-en="Testimonials">آراء العملاء</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-background">
+            <div class="hero-slide active" style="background-image: url({% static 'image/ميلانو-و-ألاسكا-2.webp' %})"></div>
+            <div class="hero-slide" style="background-image: url({% static 'image/IMG-20230504-WA0074.jpg' %})"></div>
+            <div class="hero-slide" style="background-image: url({% static 'image/ميلانو-و-ألاسكا-2.webp' %})"></div>
+        </div>
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <div class="hero-badge mb-4" data-aos="fade-down">
+                            <span data-ar="أكثر من 7 سنوات خبرة" data-en="Over 7 Years Experience">أكثر من 7 سنوات خبرة</span>
+                        </div>
+                        
+                        <h1 class="hero-title mb-4" data-aos="fade-up" data-aos-delay="200">
+                            <span class="title-line" data-ar="مرحباً بك في" data-en="Welcome to">مرحباً بك في</span>
+                            <span class="title-highlight" data-ar="نجار الدار" data-en="Najjar Al-Dar">نجار الدار</span>
+                        </h1>
+                        
+                        <p class="hero-subtitle mb-5" data-aos="fade-up" data-aos-delay="400" data-ar="نحول الأخشاب إلى تحف فنية بلمسة سعودية أصيلة وجودة عالمية" data-en="We transform wood into artistic masterpieces with authentic Saudi touch and world-class quality">
+                            نحول الأخشاب إلى تحف فنية بلمسة سعودية أصيلة وجودة عالمية
+                        </p>
+                        
+                        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+                            <a href="#gallery" class="btn btn-primary btn-lg hero-btn">
+                                <i class="fas fa-images me-2"></i>
+                                <span data-ar="شاهد أعمالنا" data-en="View Our Work">شاهد أعمالنا</span>
+                            </a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg hero-btn">
+                                <i class="fas fa-phone me-2"></i>
+                                <span data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</span>
+                            </a>
+                        </div>
+                        
+                        <div class="hero-features mt-5" data-aos="fade-up" data-aos-delay="800">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="feature-item">
+                                        <div class="feature-icon">🏆</div>
+                                        <div class="feature-text" data-ar="جودة عالية" data-en="High Quality">جودة عالية</div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="feature-item">
+                                        <div class="feature-icon">⚡</div>
+                                        <div class="feature-text" data-ar="تسليم سريع" data-en="Fast Delivery">تسليم سريع</div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="feature-item">
+                                        <div class="feature-icon">💎</div>
+                                        <div class="feature-text" data-ar="تصميم فريد" data-en="Unique Design">تصميم فريد</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Hero Navigation -->
+        <div class="hero-nav">
+            <button class="hero-nav-btn prev" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="hero-nav-btn next" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <!-- Slide Indicators -->
+        <div class="hero-indicators">
+            <span class="indicator active" onclick="currentSlide(1)"></span>
+            <span class="indicator" onclick="currentSlide(2)"></span>
+            <span class="indicator" onclick="currentSlide(3)"></span>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1000">
+            <div class="scroll-text" data-ar="اكتشف المزيد" data-en="Discover More">اكتشف المزيد</div>
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-house-circle-check"></i></div>
+                        <div class="stat-number" data-target="500">0</div>
+                        <div class="stat-label" data-ar="مشروع مكتمل" data-en="Completed Projects">مشروع مكتمل</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
+                        <div class="stat-number" data-target="7">0</div>
+                        <div class="stat-label" data-ar="سنوات خبرة" data-en="Years Experience">سنوات خبرة</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-face-smile-beam"></i></div>
+                        <div class="stat-number" data-target="200">0</div>
+                        <div class="stat-label" data-ar="عميل راضي" data-en="Happy Clients">عميل راضي</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-headset"></i></div>
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label" data-ar="دعم فني" data-en="Technical Support">دعم فني</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="about-content">
+                        <div class="section-badge mb-3" data-ar="من نحن" data-en="About Us">من نحن</div>
+                        <h2 class="section-title mb-4" data-ar="حرفية تقليدية بلمسة عصرية" data-en="Traditional Craftsmanship with Modern Touch">
+                            حرفية تقليدية بلمسة عصرية
+                        </h2>
+                        <p class="about-text mb-4" data-ar="نجّار الدار هو مشروع سعودي متميز في صناعة الأثاث الخشبي الراقي، مستوحى من التراث المحلي ولمسة عصرية فريدة. نعمل بشغف على تحويل الأخشاب إلى قطع فنية تحكي قصة الجمال والإتقان." data-en="Najjar Al-Dar is a distinguished Saudi project in manufacturing premium wooden furniture, inspired by local heritage with a unique modern touch. We passionately work to transform wood into artistic pieces that tell the story of beauty and perfection.">
+                            نجّار الدار هو مشروع سعودي متميز في صناعة الأثاث الخشبي الراقي، مستوحى من التراث المحلي ولمسة عصرية فريدة. نعمل بشغف على تحويل الأخشاب إلى قطع فنية تحكي قصة الجمال والإتقان.
+                        </p>
+                        
+                        <div class="about-features mb-4">
+                            <div class="feature-row">
+                                <div class="feature-check">✓</div>
+                                <span data-ar="خامات عالية الجودة مستوردة" data-en="High-quality imported materials">خامات عالية الجودة مستوردة</span>
+                            </div>
+                            <div class="feature-row">
+                                <div class="feature-check">✓</div>
+                                <span data-ar="فريق من الحرفيين المهرة" data-en="Team of skilled craftsmen">فريق من الحرفيين المهرة</span>
+                            </div>
+                            <div class="feature-row">
+                                <div class="feature-check">✓</div>
+                                <span data-ar="ضمان شامل على جميع المنتجات" data-en="Comprehensive warranty on all products">ضمان شامل على جميع المنتجات</span>
+                            </div>
+                        </div>
+                        
+                        <div class="rating-section mb-4">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text" data-ar="تقييم 5 نجوم من أكثر من 200 عميل" data-en="5-star rating from over 200 clients">تقييم 5 نجوم من أكثر من 200 عميل</span>
+                        </div>
+                        
+                        <a href="#gallery" class="btn btn-primary btn-lg">
+                            <i class="fas fa-arrow-left me-2"></i>
+                            <span data-ar="استكشف أعمالنا" data-en="Explore Our Work">استكشف أعمالنا</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-gallery">
+                        <div class="gallery-main">
+                            <img src="{% static './image/about 1.jpg' %}" alt="Master Craftsman" class="img-fluid rounded-3 shadow-lg">
+                        </div>
+                        <!-- <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="{% static './image/about 2.jpg' %}" alt="Workshop" class="img-fluid rounded-3">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="{% static './image/about 3.jpg' %}" alt="Quality Wood" class="img-fluid rounded-3">
+                            </div>
+                        </div> -->
+                        <div class="experience-badge">
+                            <div class="badge-number">7+</div>
+                            <div class="badge-text" data-ar="سنوات خبرة" data-en="Years Experience">سنوات خبرة</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="section-badge mb-3" data-ar="خدماتنا" data-en="Our Services">خدماتنا</div>
+                <h2 class="section-title mb-4" data-ar="نقدم أفضل الخدمات" data-en="We Provide the Best Services">نقدم أفضل الخدمات</h2>
+                <p class="section-subtitle" data-ar="مجموعة شاملة من خدمات النجارة والأثاث المصنوع خصيصاً لك" data-en="A comprehensive range of carpentry and custom furniture services">
+                    مجموعة شاملة من خدمات النجارة والأثاث المصنوع خصيصاً لك
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">🛏️</div>
+                        <div class="service-image">
+                            <img src="{% static './image/download.jfif' %}" alt="Bedroom Furniture">
+                        </div>
+                        <div class="service-content">
+                            <h4 class="service-title" data-ar="غرف النوم" data-en="Bedrooms">غرف النوم</h4>
+                            <p class="service-description" data-ar="تصميم وتنفيذ غرف نوم فاخرة بأجود أنواع الخشب والتشطيبات العالية الجودة" data-en="Design and execution of luxury bedrooms with the finest wood types and high-quality finishes">
+                                تصميم وتنفيذ غرف نوم فاخرة بأجود أنواع الخشب والتشطيبات العالية الجودة
+                            </p>
+                            <a href="#contact" class="service-link" data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-kitchen-set"></i></div>
+                        <div class="service-image">
+                            <img src="{% static './image/IMG-20230504-WA0074.jpg' %}" alt="Modern Kitchen">
+                        </div>
+                        <div class="service-content">
+                            <h4 class="service-title" data-ar="المطابخ" data-en="Kitchens">المطابخ</h4>
+                            <p class="service-description" data-ar="مطابخ عصرية تجمع بين الجمال والوظائف العملية مع أحدث التقنيات والتصاميم" data-en="Modern kitchens that combine beauty and practical functions with the latest technologies and designs">
+                                مطابخ عصرية تجمع بين الجمال والوظائف العملية مع أحدث التقنيات والتصاميم
+                            </p>
+                            <a href="#contact" class="service-link" data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-door-open"></i></div>
+                        <div class="service-image">
+                            <img src="{% static './image/IMG-20230504-WA0075.jpg' %}" alt="Doors and Windows">
+                        </div>
+                        <div class="service-content">
+                            <h4 class="service-title" data-ar="الأبواب والنوافذ" data-en="Doors & Windows">الأبواب والنوافذ</h4>
+                            <p class="service-description" data-ar="أبواب ونوافذ خشبية وألومنيوم بتصاميم متنوعة وجودة استثنائية تدوم لسنوات" data-en="Wooden and aluminum doors and windows with various designs and exceptional quality that lasts for years">
+                                أبواب ونوافذ خشبية وألومنيوم بتصاميم متنوعة وجودة استثنائية تدوم لسنوات
+                            </p>
+                            <a href="#contact" class="service-link" data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <div class="service-icon">🎨</div>
+                        <div class="service-image">
+                            <img src="{% static './image/IMG-20240725-WA0017.jpg' %}" alt="Wood Decorations">
+                        </div>
+                        <div class="service-content">
+                            <h4 class="service-title" data-ar="الديكورات الخشبية" data-en="Wood Decorations">الديكورات الخشبية</h4>
+                            <p class="service-description" data-ar="ديكورات داخلية تضفي لمسة دافئة وأنيقة على منزلك مع تصاميم مبتكرة ومميزة" data-en="Interior decorations that add a warm and elegant touch to your home with innovative and distinctive designs">
+                                ديكورات داخلية تضفي لمسة دافئة وأنيقة على منزلك مع تصاميم مبتكرة ومميزة
+                            </p>
+                            <a href="#contact" class="service-link" data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container-fluid">
+            <div class="text-center mb-5">
+                <div class="section-badge mb-3" data-ar="معرض الأعمال" data-en="Work Gallery">معرض الأعمال</div>
+                <h2 class="section-title mb-4" data-ar="شاهد إبداعاتنا" data-en="See Our Creations">شاهد إبداعاتنا</h2>
+                <p class="section-subtitle" data-ar="اختر نوع الخامة والمنتج لعرض ما يناسبك" data-en="Choose material type and product to display what suits you">
+                    اختر نوع الخامة والمنتج لعرض ما يناسبك
+                </p>
+            </div>
+            
+            <div class="row">
+                <!-- Filters Sidebar -->
+                <div class="col-lg-3 mb-4">
+                    <div class="filters-card" data-aos="fade-right">
+                        <div class="filter-header">
+                            <h5 data-ar="فلترة المنتجات" data-en="Filter Products">فلترة المنتجات</h5>
+                            <button class="btn btn-sm btn-outline-primary" onclick="resetFilters()" data-ar="إعادة تعيين" data-en="Reset">إعادة تعيين</button>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h6 class="filter-title" data-ar="نوع الخامة" data-en="Material Type">نوع الخامة</h6>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="radio" name="material" value="wood" checked>
+                                    <span class="checkmark"></span>
+                                    <span data-ar="خشب" data-en="Wood">خشب</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="material" value="aluminum">
+                                    <span class="checkmark"></span>
+                                    <span data-ar="ألوميتال" data-en="Aluminum">ألوميتال</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h6 class="filter-title" data-ar="نوع المنتج" data-en="Product Type">نوع المنتج</h6>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="bedroom" checked>
+                                    <span class="checkmark"></span>
+                                    <span data-ar="غرف نوم" data-en="Bedrooms">غرف نوم</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="kitchen">
+                                    <span class="checkmark"></span>
+                                    <span data-ar="مطابخ" data-en="Kitchens">مطابخ</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="doors">
+                                    <span class="checkmark"></span>
+                                    <span data-ar="أبواب" data-en="Doors">أبواب</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="tables">
+                                    <span class="checkmark"></span>
+                                    <span data-ar="طاولات" data-en="Tables">طاولات</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="decorations">
+                                    <span class="checkmark"></span>
+                                    <span data-ar="ديكورات" data-en="Decorations">ديكورات</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" id="totalProducts">0</span>
+                                <span class="stat-label" data-ar="منتج متاح" data-en="Available Products">منتج متاح</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Products Grid -->
+                <div class="col-lg-9">
+                    <div id="products-container" class="products-grid">
+                        <!-- Products will be loaded here -->
+                    </div>
+                    
+                    <div class="text-center mt-5">
+                        <button id="loadMoreBtn" class="btn btn-outline-primary btn-lg load-more-btn" style="display: none;">
+                            <i class="fas fa-plus me-2"></i>
+                            <span data-ar="تحميل المزيد" data-en="Load More">تحميل المزيد</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="section-badge mb-3" data-ar="آراء العملاء" data-en="Client Testimonials">آراء العملاء</div>
+                <h2 class="section-title mb-4" data-ar="ماذا يقول عملاؤنا" data-en="What Our Clients Say">ماذا يقول عملاؤنا</h2>
+            </div>
+            
+            <div class="testimonials-slider" data-aos="fade-up">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text" data-ar="خدمة ممتازة وجودة عالية جداً. فريق محترف ومتعاون. أنصح بالتعامل معهم بقوة." data-en="Excellent service and very high quality. Professional and cooperative team. I highly recommend dealing with them.">
+                            خدمة ممتازة وجودة عالية جداً. فريق محترف ومتعاون. أنصح بالتعامل معهم بقوة.
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="{% static './image/team1.webp' %}" alt="أحمد محمد">
+                            <div class="author-info">
+                                <h5 class="author-name" data-ar="أحمد محمد" data-en="Ahmed Mohammed">أحمد محمد</h5>
+                                <div class="author-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text" data-ar="تم تنفيذ غرفة النوم بشكل رائع وفي الوقت المحدد. التصميم جميل والخامات ممتازة." data-en="The bedroom was executed wonderfully and on time. Beautiful design and excellent materials.">
+                            تم تنفيذ غرفة النوم بشكل رائع وفي الوقت المحدد. التصميم جميل والخامات ممتازة.
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="{% static './image/team1.webp' %}" alt="فاطمة العلي">
+                            <div class="author-info">
+                                <h5 class="author-name" data-ar="فاطمة العلي" data-en="Fatima Al-Ali">فاطمة العلي</h5>
+                                <div class="author-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text" data-ar="المطبخ الجديد فاق توقعاتي بكثير. التصميم عملي وجميل في نفس الوقت." data-en="The new kitchen exceeded my expectations by far. The design is both practical and beautiful.">
+                            المطبخ الجديد فاق توقعاتي بكثير. التصميم عملي وجميل في نفس الوقت.
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="{% static './image/team1.webp' %}" alt="خالد السعد">
+                            <div class="author-info">
+                                <h5 class="author-name" data-ar="خالد السعد" data-en="Khalid Al-Saad">خالد السعد</h5>
+                                <div class="author-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-nav">
+                <button class="nav-btn prev" onclick="changeTestimonial(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-btn next" onclick="changeTestimonial(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="section-badge mb-3" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</div>
+                <h2 class="section-title mb-4 text-white" data-ar="نحن هنا لخدمتك" data-en="We're Here to Serve You">نحن هنا لخدمتك</h2>
+                <p class="section-subtitle text-white-50" data-ar="تواصل معنا الآن واحصل على استشارة مجانية" data-en="Contact us now and get a free consultation">
+                    تواصل معنا الآن واحصل على استشارة مجانية
+                </p>
+            </div>
+            
+            <div class="row g-5">
+                <div class="col-lg-4" data-aos="fade-right">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5 data-ar="اتصل بنا" data-en="Call Us">اتصل بنا</h5>
+                                <p>+966 50 123 4567</p>
+                                <p>+966 11 234 5678</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5 data-ar="راسلنا" data-en="Email Us">راسلنا</h5>
+                                <p>info@najjaraldar.com</p>
+                                <p>orders@najjaraldar.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5 data-ar="زورنا" data-en="Visit Us">زورنا</h5>
+                                <p data-ar="الرياض، حي النخيل" data-en="Riyadh, Al-Nakheel District">الرياض، حي النخيل</p>
+                                <p data-ar="المملكة العربية السعودية" data-en="Kingdom of Saudi Arabia">المملكة العربية السعودية</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-8" data-aos="fade-left">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="name" class="form-control" placeholder="الاسم الكامل" data-placeholder-ar="الاسم الكامل" data-placeholder-en="Full Name" required>
+                                        <i class="fas fa-user form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="tel" name="phone" class="form-control" placeholder="رقم الهاتف" data-placeholder-ar="رقم الهاتف" data-placeholder-en="Phone Number" required>
+                                        <i class="fas fa-phone form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input type="email" name="email" class="form-control" placeholder="البريد الإلكتروني" data-placeholder-ar="البريد الإلكتروني" data-placeholder-en="Email Address" required>
+                                        <i class="fas fa-envelope form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <select name="service" class="form-control" required>
+                                            <option value="" data-ar="اختر نوع الخدمة" data-en="Choose Service Type">اختر نوع الخدمة</option>
+                                            <option value="bedroom" data-ar="غرف نوم" data-en="Bedrooms">غرف نوم</option>
+                                            <option value="kitchen" data-ar="مطابخ" data-en="Kitchens">مطابخ</option>
+                                            <option value="doors" data-ar="أبواب ونوافذ" data-en="Doors & Windows">أبواب ونوافذ</option>
+                                            <option value="decorations" data-ar="ديكورات" data-en="Decorations">ديكورات</option>
+                                            <option value="other" data-ar="أخرى" data-en="Other">أخرى</option>
+                                        </select>
+                                        <i class="fas fa-list form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea name="message" class="form-control" rows="4" placeholder="تفاصيل المشروع" data-placeholder-ar="تفاصيل المشروع" data-placeholder-en="Project Details" required></textarea>
+                                        <i class="fas fa-comment form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg submit-btn">
+                                        <i class="fas fa-paper-plane me-2"></i>
+                                        <span data-ar="إرسال الرسالة" data-en="Send Message">إرسال الرسالة</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="logo-icon">🪚</div>
+                            <div class="logo-text">
+                                <span class="brand-name" data-ar="نجار الدار" data-en="Najjar Al-Dar">نجار الدار</span>
+                                <span class="brand-tagline" data-ar="حرفية متقنة" data-en="Perfect Craftsmanship">حرفية متقنة</span>
+                            </div>
+                        </div>
+                        <p class="footer-description" data-ar="نحول الأخشاب إلى تحف فنية بلمسة سعودية أصيلة وجودة عالمية" data-en="We transform wood into artistic masterpieces with authentic Saudi touch and world-class quality">
+                            نحول الأخشاب إلى تحف فنية بلمسة سعودية أصيلة وجودة عالمية
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h5 class="footer-title" data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h5>
+                        <ul>
+                            <li><a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                            <li><a href="#about" data-ar="من نحن" data-en="About">من نحن</a></li>
+                            <li><a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
+                            <li><a href="#gallery" data-ar="المعرض" data-en="Gallery">المعرض</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h5 class="footer-title" data-ar="الخدمات" data-en="Services">الخدمات</h5>
+                        <ul>
+                            <li><a href="#" data-ar="غرف النوم" data-en="Bedrooms">غرف النوم</a></li>
+                            <li><a href="#" data-ar="المطابخ" data-en="Kitchens">المطابخ</a></li>
+                            <li><a href="#" data-ar="الأبواب" data-en="Doors">الأبواب</a></li>
+                            <li><a href="#" data-ar="الديكورات" data-en="Decorations">الديكورات</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="footer-contact">
+                        <h5 class="footer-title" data-ar="تواصل معنا" data-en="Contact Info">تواصل معنا</h5>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+966 50 123 4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@najjaraldar.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-ar="الرياض، المملكة العربية السعودية" data-en="Riyadh, Saudi Arabia">الرياض، المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright" data-ar="© 2024 نجار الدار. جميع الحقوق محفوظة." data-en="© 2024 Najjar Al-Dar. All rights reserved.">
+                            © 2024 نجار الدار. جميع الحقوق محفوظة.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <button id="whatsappBtn" class="floating-btn whatsapp-btn" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+        <button id="topBtn" class="floating-btn scroll-top-btn" title="أعلى الصفحة" style="display: none;">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center p-5">
+                    <div class="success-icon mb-3">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h4 class="mb-3" data-ar="تم الإرسال بنجاح!" data-en="Sent Successfully!">تم الإرسال بنجاح!</h4>
+                    <p data-ar="شكراً لك! سنتواصل معك قريباً." data-en="Thank you! We will contact you soon.">شكراً لك! سنتواصل معك قريباً.</p>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-ar="حسناً" data-en="OK">حسناً</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content product-modal-content">
+            <div class="modal-header product-modal-header">
+                <h5 class="modal-title product-modal-title" id="productModalTitle"></h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body product-modal-body p-0">
+                <div class="container-fluid">
+                    <div class="row g-0">
+                        <!-- Product Images Gallery -->
+                        <div class="col-lg-7">
+                            <div class="product-gallery">
+                                <div class="main-image-container">
+                                    <img id="mainProductImage" src="{% static './image/IMG-20240725-WA0017.jpg' %}" alt="" class="main-product-image">
+                                    <div class="image-overlay">
+                                        <button class="zoom-btn" onclick="toggleImageZoom()">
+                                            <i class="fas fa-search-plus"></i>
+                                        </button>
+                                        <button class="fullscreen-btn" onclick="openImageFullscreen()">
+                                            <i class="fas fa-expand"></i>
+                                        </button>
+                                    </div>
+                                    <div class="gallery-nav">
+                                        <button class="gallery-nav-btn prev" onclick="changeGalleryImage(-1)">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="gallery-nav-btn next" onclick="changeGalleryImage(1)">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="thumbnail-gallery">
+                                    <div class="thumbnail-container" id="thumbnailContainer">
+                                        <!-- Thumbnails will be generated here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product Details -->
+                        <div class="col-lg-5">
+  <div class="product-details">
+
+    <!-- ✅ هيدر المنتج -->
+    <div class="product-header">
+      <div class="product-badge-container">
+        <span class="product-material-badge" id="productMaterialBadge"></span>
+        <span class="product-category-badge" id="productCategoryBadge"></span>
+      </div>
+      <h2 class="product-title" id="productTitle"></h2>
+
+      <div class="product-rating">
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <span class="rating-text" data-ar="(تقييم 5 نجوم)" data-en="(5 Star Rating)">
+          (تقييم 5 نجوم)
+        </span>
+      </div>
+    </div>
+
+    <!-- ✅ وصف المنتج -->
+    <div class="product-description">
+      <h4 data-ar="وصف المنتج" data-en="Product Description">وصف المنتج</h4>
+      <p id="productDescription"></p>
+    </div>
+
+    <!-- ✅ **سعر المنتج الجديد** -->
+    <div class="product-price">
+      <h4 data-ar="السعر" data-en="Price">💰 السعر</h4>
+      <p id="productPrice" class="price-tag"></p>
+    </div>
+
+    <!-- ✅ المميزات -->
+    <div class="product-features">
+      <h4 data-ar="المميزات" data-en="Features">المميزات</h4>
+      <ul id="productFeatures">
+        <!-- Features will be generated here -->
+      </ul>
+    </div>
+
+    <!-- ✅ المواصفات -->
+    <div class="product-specifications">
+      <h4 data-ar="المواصفات" data-en="Specifications">المواصفات</h4>
+      <div class="specs-grid" id="productSpecs">
+        <div class="spec-item">
+          <strong data-ar="اللون:" data-en="Color:">🎨 اللون:</strong>
+          <span id="productColor"></span>
+        </div>
+        <div class="spec-item">
+          <strong data-ar="الأبعاد:" data-en="Dimensions:">📏 الأبعاد:</strong>
+          <span id="productDimensions"></span>
+        </div>
+        <div class="spec-item">
+          <strong data-ar="تفاصيل إضافية:" data-en="Extra Details:">📝 تفاصيل إضافية:</strong>
+          <span id="productExtraDetails"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ أزرار الإجراءات -->
+    <div class="product-actions">
+      <button class="btn btn-primary btn-lg product-action-btn" onclick="requestQuote()">
+        <i class="fas fa-calculator me-2"></i>
+        <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+      </button>
+      <button class="btn btn-success btn-lg product-action-btn" onclick="contactWhatsApp()">
+        <i class="fab fa-whatsapp me-2"></i>
+        <span data-ar="تواصل واتساب" data-en="WhatsApp Contact">تواصل واتساب</span>
+      </button>
+      <button class="btn btn-outline-primary btn-lg product-action-btn" onclick="shareProduct()">
+        <i class="fas fa-share-alt me-2"></i>
+        <span data-ar="مشاركة" data-en="Share">مشاركة</span>
+      </button>
+    </div>
+
+    <!-- ✅ الضمان وخدمات ما بعد البيع -->
+    <div class="product-guarantee">
+      <div class="guarantee-item">
+        <i class="fas fa-shield-alt"></i>
+        <span data-ar="ضمان شامل لمدة سنتين" data-en="2 Years Full Warranty">ضمان شامل لمدة سنتين</span>
+      </div>
+      <div class="guarantee-item">
+        <i class="fas fa-truck"></i>
+        <span data-ar="توصيل وتركيب مجاني" data-en="Free Delivery & Installation">توصيل وتركيب مجاني</span>
+      </div>
+      <div class="guarantee-item">
+        <i class="fas fa-tools"></i>
+        <span data-ar="صيانة دورية مجانية" data-en="Free Maintenance">صيانة دورية مجانية</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Image Fullscreen Modal -->
+    <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content bg-dark">
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body d-flex align-items-center justify-content-center">
+                <img id="fullscreenImage" src="{% static './image/about 2.jpg' %}" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Quote Request Modal -->
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="quoteForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label" data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</label>
+                            <input type="text" name="name" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" data-ar="رقم الهاتف" data-en="Phone Number">رقم الهاتف</label>
+                            <input type="tel" name="phone" class="form-control" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label" data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" data-ar="الكمية المطلوبة" data-en="Quantity">الكمية المطلوبة</label>
+                            <input type="number" name="quantity" class="form-control" min="1" value="1" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" data-ar="المدينة" data-en="City">المدينة</label>
+                            <select name="city" class="form-control" required>
+                                <option value="" data-ar="اختر المدينة" data-en="Select City">اختر المدينة</option>
+                                <option value="riyadh" data-ar="الرياض" data-en="Riyadh">الرياض</option>
+                                <option value="jeddah" data-ar="جدة" data-en="Jeddah">جدة</option>
+                                <option value="dammam" data-ar="الدمام" data-en="Dammam">الدمام</option>
+                                <option value="mecca" data-ar="مكة" data-en="Mecca">مكة</option>
+                                <option value="medina" data-ar="المدينة" data-en="Medina">المدينة</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label" data-ar="تفاصيل إضافية" data-en="Additional Details">تفاصيل إضافية</label>
+                            <textarea name="message" class="form-control" rows="3" placeholder="أي متطلبات خاصة أو تفاصيل إضافية..."></textarea>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-paper-plane me-2"></i>
+                            <span data-ar="إرسال طلب العرض" data-en="Send Quote Request">إرسال طلب العرض</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div class="modal fade" id="adminLoginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title">
+                    <i class="fas fa-user-shield me-2"></i>
+                    <span data-ar="تسجيل دخول الإدارة" data-en="Admin Login">تسجيل دخول الإدارة</span>
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="adminLoginForm">
+                    <div class="mb-3">
+                        <label class="form-label" data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</label>
+                        <input type="email" class="form-control" id="adminEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" data-ar="كلمة المرور" data-en="Password">كلمة المرور</label>
+                        <input type="password" class="form-control" id="adminPassword" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-dark btn-lg">
+                            <i class="fas fa-sign-in-alt me-2"></i>
+                            <span data-ar="دخول" data-en="Login">دخول</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Admin Dashboard Modal -->
+    <div class="modal fade" id="adminDashboardModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">
+                    <i class="fas fa-tachometer-alt me-2"></i>
+                    <span data-ar="لوحة تحكم الإدارة" data-en="Admin Dashboard">لوحة تحكم الإدارة</span>
+                </h5>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-light btn-sm" onclick="logoutAdmin()">
+                        <i class="fas fa-sign-out-alt me-1"></i>
+                        <span data-ar="خروج" data-en="Logout">خروج</span>
+                    </button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+            </div>
+            <div class="modal-body p-0">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Sidebar -->
+                        <div class="col-md-3 bg-light p-3">
+                            <div class="admin-sidebar">
+                                <div class="admin-stats mb-4">
+                                    <div class="stat-card bg-primary text-white p-3 rounded mb-2">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <h6 data-ar="إجمالي المنتجات" data-en="Total Products">إجمالي المنتجات</h6>
+                                                <h3 id="totalProductsCount">0</h3>
+                                            </div>
+                                            <i class="fas fa-box fa-2x"></i>
+                                        </div>
+                                    </div>
+                                    <div class="stat-card bg-success text-white p-3 rounded mb-2">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <h6 data-ar="منتجات خشبية" data-en="Wood Products">منتجات خشبية</h6>
+                                                <h3 id="woodProductsCount">0</h3>
+                                            </div>
+                                            <i class="fas fa-tree fa-2x"></i>
+                                        </div>
+                                    </div>
+                                    <div class="stat-card bg-warning text-white p-3 rounded">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <h6 data-ar="منتجات ألومنيوم" data-en="Aluminum Products">منتجات ألومنيوم</h6>
+                                                <h3 id="aluminumProductsCount">0</h3>
+                                            </div>
+                                            <i class="fas fa-industry fa-2x"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="admin-nav-tabs mb-4">
+                                    <button class="admin-nav-btn active" onclick="showAdminProducts()" id="productsTab">
+                                        <i class="fas fa-box me-2"></i>
+                                        <span data-ar="المنتجات" data-en="Products">المنتجات</span>
+                                    </button>
+                                    <button class="admin-nav-btn" onclick="showAdminMessages()" id="messagesTab">
+                                        <i class="fas fa-envelope me-2"></i>
+                                        <span data-ar="الرسائل" data-en="Messages">الرسائل</span>
+                                        <span class="message-count" id="messageCount">0</span>
+                                    </button>
+                                </div>
+                                
+                                <button class="btn btn-success w-100 mb-3" onclick="showAddProductForm()">
+                                    <i class="fas fa-plus me-2"></i>
+                                    <span data-ar="إضافة منتج جديد" data-en="Add New Product">إضافة منتج جديد</span>
+                                </button>
+                                
+                                <div class="filter-section">
+                                    <h6 data-ar="فلترة المنتجات" data-en="Filter Products">فلترة المنتجات</h6>
+                                    <select class="form-select mb-2" id="adminMaterialFilter">
+                                        <option value="all" data-ar="جميع المواد" data-en="All Materials">جميع المواد</option>
+                                        <option value="wood" data-ar="خشب" data-en="Wood">خشب</option>
+                                        <option value="aluminum" data-ar="ألومنيوم" data-en="Aluminum">ألومنيوم</option>
+                                    </select>
+                                    <select class="form-select" id="adminCategoryFilter">
+                                        <option value="all" data-ar="جميع الفئات" data-en="All Categories">جميع الفئات</option>
+                                        <option value="bedroom" data-ar="غرف نوم" data-en="Bedrooms">غرف نوم</option>
+                                        <option value="kitchen" data-ar="مطابخ" data-en="Kitchens">مطابخ</option>
+                                        <option value="doors" data-ar="أبواب" data-en="Doors">أبواب</option>
+                                        <option value="tables" data-ar="طاولات" data-en="Tables">طاولات</option>
+                                        <option value="decorations" data-ar="ديكورات" data-en="Decorations">ديكورات</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Main Content -->
+                        <div class="col-md-9 p-3">
+                            <div id="adminProductsList" class="admin-products-list">
+                                <!-- Products will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Add/Edit Product Modal -->
+    <div class="modal fade" id="productFormModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="productFormTitle">
+                    <i class="fas fa-plus me-2"></i>
+                    <span data-ar="إضافة منتج جديد" data-en="Add New Product">إضافة منتج جديد</span>
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="productForm">
+                    <input type="hidden" id="productId" name="productId">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label" data-ar="اسم المنتج (عربي)" data-en="Product Name (Arabic)">اسم المنتج (عربي)</label>
+                            <input type="text" class="form-control" id="title" name="title" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" data-ar="اسم المنتج (إنجليزي)" data-en="Product Name (English)">اسم المنتج (إنجليزي)</label>
+                            <input type="text" class="form-control" id="title_en" name="title_en" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" data-ar="نوع المادة" data-en="Material Type">نوع المادة</label>
+                            <select class="form-control" id="material" name="material" required>
+                                <option value="wood" data-ar="خشب" data-en="Wood">خشب</option>
+                                <option value="aluminum" data-ar="ألومنيوم" data-en="Aluminum">ألومنيوم</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" data-ar="الفئة" data-en="Category">الفئة</label>
+                            <select class="form-control" id="category" name="category" required>
+                                <option value="bedroom" data-ar="غرف نوم" data-en="Bedrooms">غرف نوم</option>
+                                <option value="kitchen" data-ar="مطابخ" data-en="Kitchens">مطابخ</option>
+                                <option value="doors" data-ar="أبواب" data-en="Doors">أبواب</option>
+                                <option value="tables" data-ar="طاولات" data-en="Tables">طاولات</option>
+                                <option value="decorations" data-ar="ديكورات" data-en="Decorations">ديكورات</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+    <label class="form-label" data-ar="السعر" data-en="Price">السعر</label>
+    <input type="number" step="0.01" class="form-control" id="price" name="price" placeholder="أدخل السعر">
+</div>
+
+<div class="col-md-6">
+    <label class="form-label" data-ar="اللون" data-en="Color">اللون</label>
+    <input type="text" class="form-control" id="color" name="color" placeholder="أدخل اللون">
+</div>
+
+<div class="col-12">
+    <label class="form-label" data-ar="الأبعاد (مثال: 200x150 سم)" data-en="Dimensions (e.g. 200x150 cm)">الأبعاد</label>
+    <input type="text" class="form-control" id="dimensions" name="dimensions" placeholder="أدخل الأبعاد">
+</div>
+
+<div class="col-12">
+    <label class="form-label" data-ar="تفاصيل إضافية" data-en="Additional Details">تفاصيل إضافية</label>
+    <textarea class="form-control" id="extra_details" name="extra_details" rows="4" placeholder="اكتب أي تفاصيل إضافية عن المنتج مثل مواد التصنيع، بلد الصنع، ملاحظات خاصة..."></textarea>
+</div>
+
+                        <div class="col-12">
+                            <label class="form-label" data-ar="رابط الصورة" data-en="Image URL">رابط الصورة</label>
+                            <input type="file"  class="form-control" id="img" name="img" >
+                            <div class="form-text" data-ar="يمكنك استخدام placeholder.svg أو رابط صورة حقيقية" data-en="You can use placeholder.svg or a real image URL">يمكنك استخدام placeholder.svg أو رابط صورة حقيقية</div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label" data-ar="وصف المنتج (عربي)" data-en="Product Description (Arabic)">وصف المنتج (عربي)</label>
+                            <textarea class="form-control" id="description_ar" name="description_ar" rows="3"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label" data-ar="وصف المنتج (إنجليزي)" data-en="Product Description (English)">وصف المنتج (إنجليزي)</label>
+                            <textarea class="form-control" id="description_en" name="description_en" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-success btn-lg">
+                            <i class="fas fa-save me-2"></i>
+                            <span data-ar="حفظ المنتج" data-en="Save Product">حفظ المنتج</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title">
+                    <i class="fas fa-trash me-2"></i>
+                    <span data-ar="تأكيد الحذف" data-en="Confirm Delete">تأكيد الحذف</span>
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <i class="fas fa-exclamation-triangle fa-3x text-warning mb-3"></i>
+                <h5 data-ar="هل أنت متأكد من حذف هذا المنتج؟" data-en="Are you sure you want to delete this product?">هل أنت متأكد من حذف هذا المنتج؟</h5>
+                <p class="text-muted" data-ar="لا يمكن التراجع عن هذا الإجراء" data-en="This action cannot be undone">لا يمكن التراجع عن هذا الإجراء</p>
+                <div class="mt-4">
+                    <button class="btn btn-secondary me-2" data-bs-dismiss="modal">
+                        <span data-ar="إلغاء" data-en="Cancel">إلغاء</span>
+                    </button>
+                    <button class="btn btn-danger" onclick="confirmDeleteProduct()">
+                        <i class="fas fa-trash me-2"></i>
+                        <span data-ar="حذف" data-en="Delete">حذف</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Message Reply Modal -->
+    <div class="modal fade" id="messageReplyModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-info text-white">
+                    <h5 class="modal-title">
+                        <i class="fas fa-reply me-2"></i>
+                        <span data-ar="الرد على الرسالة" data-en="Reply to Message">الرد على الرسالة</span>
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="original-message mb-4">
+                        <h6 data-ar="الرسالة الأصلية:" data-en="Original Message:">الرسالة الأصلية:</h6>
+                        <div class="message-details p-3 bg-light rounded">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <strong data-ar="الاسم:" data-en="Name:">الاسم:</strong>
+                                    <span id="replyMessageName"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <strong data-ar="الهاتف:" data-en="Phone:">الهاتف:</strong>
+                                    <span id="replyMessagePhone"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <strong data-ar="الإيميل:" data-en="Email:">الإيميل:</strong>
+                                    <span id="replyMessageEmail"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <strong data-ar="النوع:" data-en="Type:">النوع:</strong>
+                                    <span id="replyMessageType"></span>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <strong data-ar="الرسالة:" data-en="Message:">الرسالة:</strong>
+                                    <p id="replyMessageContent" class="mt-1"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form id="messageReplyForm">
+                        <input type="hidden" id="replyMessageId" name="messageId">
+                        <div class="mb-3">
+                            <label class="form-label" data-ar="ردك على الرسالة" data-en="Your Reply">ردك على الرسالة</label>
+                            <textarea class="form-control" id="replyContent" name="replyContent" rows="5" required placeholder="اكتب ردك هنا..."></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-info btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i>
+                                <span data-ar="إرسال الرد" data-en="Send Reply">إرسال الرد</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="{% static 'js/script.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+    
+
+    </body>
+    </html>
