@@ -187,9 +187,9 @@ async function loadProducts() {
 
     // Test API connection first
     const connectionTest = await testAPIConnection()
-    if (!connectionTest) {
-      throw new Error("فشل في الاتصال بالخادم. تأكد من تشغيل Django server على http://127.0.0.1:8000")
-    }
+    // if (!connectionTest) {
+    //   throw new Error("فشل في الاتصال بالخادم. تأكد من تشغيل Django server على http://127.0.0.1:8000")
+    // }
 
     // Load products from database via API
     const products = await ProductAPI.loadProducts()
